@@ -69,7 +69,13 @@ var fight = function(enemyName) {
   }
 };
 
-// fight each enemy-robot by looping over them and fighting them one at a time
+// function to start a new game
+var startGame = function() {
+// reset player stats
+playerHealth = 100;
+playerAttack = 10;
+playerMoney = 10;
+  // fight each enemy-robot by looping over them and fighting them one at a time
 for (var i = 0; i < enemyNames.length; i++) {
   // if player is still alive, keep fighting
   if (playerHealth > 0) {
@@ -94,3 +100,11 @@ for (var i = 0; i < enemyNames.length; i++) {
     break;
   }
 }
+
+  // play again
+  startGame();
+};
+
+};
+// start the game when the page loads
+startGame();
